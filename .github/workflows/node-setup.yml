@@ -25,4 +25,8 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: 'node'
+        working-directory: node
+      
+      - name: Run ESLint
+        run: npx eslint . --format json --output-file eslint-report-artifact.json
+        working-directory: node
